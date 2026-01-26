@@ -1,0 +1,26 @@
+.button {
+  text-decoration: none;
+  font-family: $font-heading;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 1;
+  letter-spacing: 0;
+  color: $c-white;
+
+  display: flex;
+  height: 50px;
+  width: 100%;
+  background-color: $c-blue;
+  border-radius: 8px;
+  justify-content: center;
+  align-items: center;
+
+  @include tablet {
+    width: 264px;
+    margin-bottom: 91px;
+  }
+
+  @include small-desktop {
+    margin-bottom: 0;
+  }
+}

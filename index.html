@@ -6,14 +6,114 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0"
     />
-    <title>Dia</title>
+    <title>Air</title>
     <link
       rel="stylesheet"
       href="src/styles/main.scss"
     />
   </head>
   <body>
-    <h1>Dia</h1>
+    <header
+      class="header"
+      id="home"
+    >
+      <div class="header__navigation">
+        <nav class="navigation">
+          <a
+            href="#home"
+            class="logo"
+          >
+            <img
+              src="src/images/logo/Logo.svg"
+              alt="Air"
+              class="logo__image"
+            />
+          </a>
+          <div
+            class="menu"
+            id="menu"
+          >
+            <div class="menu__container">
+              <ul class="menu__list">
+                <li>
+                  <a
+                    href="#about-us"
+                    class="menu__link"
+                  >
+                    About us
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#services"
+                    class="menu__link"
+                  >
+                    Services
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#testimonials"
+                    class="menu__link"
+                  >
+                    Testimonials
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#contact-us"
+                    class="menu__link"
+                  >
+                    Contact Us
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="navigation__controls">
+            <a
+              href="#"
+              class="burger"
+            >
+              <span class="burger__label">Open menu</span>
+            </a>
+            <a
+              href="#contact-us"
+              class="navigation__link"
+            >
+              Hire us
+            </a>
+          </div>
+        </nav>
+      </div>
+      <div class="header__content">
+        <h1 class="header__title">Strategic Agency</h1>
+        <p class="header__text">
+          We believe in the power of bold ideas that can solve business
+          challenges.
+        </p>
+        <a
+          href="#about-us"
+          class="button"
+        >
+          Learn more
+        </a>
+      </div>
+      <div class="header__gallery">
+        <div class="card">
+          <div class="card__controls">
+            <button class="card__button card__button--back"></button>
+            <button class="card__button card__button--forward"></button>
+          </div>
+          <div class="card__info">
+            <span class="card__title">INtro</span>
+            <p class="card__text">
+              By the same illusion which lifts the horizon.
+            </p>
+          </div>
+        </div>
+      </div>
+    </header>
     <script src="src/scripts/main.js"></script>
   </body>
 </html>

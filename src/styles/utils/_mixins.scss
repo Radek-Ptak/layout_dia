@@ -4,3 +4,39 @@
     #{$_property}: $_toValue;
   }
 }
+
+@mixin tablet {
+  @media (min-width: $bp-tablet) {
+    @content;
+  }
+}
+@mixin small-desktop {
+  @media (min-width: $bp-small-desktop) {
+    @content;
+  }
+}
+@mixin desktop {
+  @media (min-width: $bp-desktop) {
+    @content;
+  }
+}
+@mixin design {
+  @media (min-width: $bp-design) {
+    @content;
+  }
+}
+@mixin large {
+  @media (min-width: $bp-large) {
+    @content;
+  }
+}
+
+@mixin visually-hidden {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}

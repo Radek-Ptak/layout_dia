@@ -1,7 +1,27 @@
 @import 'utils';
 @import 'fonts';
 @import 'typography';
+@import './blocks/header';
+@import './blocks/navigation';
+@import './blocks/burger';
+@import './blocks/menu';
+@import './blocks/button';
+@import './blocks/card';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 body {
-  background: $c-gray;
+  background: $c-background;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.page__body--with-menu {
+  overflow: hidden;
 }

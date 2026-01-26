@@ -1,0 +1,102 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+
+  width: 100%;
+  height: 390px;
+
+  background-image: url('../images/slider/slide-img-2.jpg');
+  background-size: cover;
+  background-position: center;
+  border-radius: 30px;
+
+  @include small-desktop {
+    height: 680px;
+    width: 502px;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    border-radius: 30px 0 30px 0;
+  }
+
+  &__controls {
+    display: flex;
+    padding: 0 20px;
+    gap: 16px;
+    margin-bottom: 16px;
+
+    @include tablet {
+      padding: 0 40px;
+    }
+
+    @include small-desktop {
+      padding: 0 24px 0 78px;
+      margin-bottom: 0;
+    }
+  }
+
+  &__button {
+    background-color: $c-white;
+    height: 32px;
+    width: 32px;
+    border-radius: 50%;
+    border: none;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 18px 18px;
+
+    &--back {
+      background-image: url('../images/slider/arrow-left.svg');
+      rotate: 180deg;
+    }
+
+    &--forward {
+      background-image: url('../images/slider/arrow-left.svg');
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    padding: 0 20px;
+    gap: 8px;
+
+    @include tablet {
+      padding: 0 40px;
+    }
+
+    @include small-desktop {
+      padding: 0;
+      max-width: 266px;
+    }
+  }
+
+  &__title {
+    font-family: $font-heading;
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 1;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: $c-white;
+  }
+
+  &__text {
+    font-family: $font-text;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.4;
+    letter-spacing: 0;
+    color: $c-white;
+    margin-bottom: 24px;
+
+    @include tablet {
+      margin-bottom: 32px;
+    }
+
+    @include small-desktop {
+      margin-bottom: 0;
+    }
+  }
+}
