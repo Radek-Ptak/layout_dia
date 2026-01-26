@@ -1,37 +1,34 @@
 .navigation {
   display: flex;
   justify-content: space-between;
-  align-items: center;
 
   &__controls {
     display: flex;
-    align-items: center;
     gap: 114px;
+    align-items: center;
 
     @include tablet {
       gap: 389px;
     }
 
     @include small-desktop {
-      flex: 1;
-      justify-content: flex-end;
       gap: 0;
     }
   }
 
   &__link {
+    padding-bottom: 8px;
+    border-bottom: 2px solid transparent;
+
+    font-family: $font-heading;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1.5;
+    color: $c-white;
     text-decoration: none;
     text-transform: uppercase;
-    font-family: $font-heading;
-    font-weight: 700;
-    font-size: 13px;
-    line-height: 1.5;
     letter-spacing: 3px;
-    color: $c-white;
 
-    padding-bottom: 8px;
-
-    border-bottom: 2px solid transparent;
     transition: color 0.3s ease;
 
     &:hover {

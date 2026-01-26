@@ -1,8 +1,7 @@
 .logo {
   @include small-desktop {
-    flex: 1;
     display: flex;
-    justify-content: flex-start;
+    align-items: baseline;
   }
 
   &__image {

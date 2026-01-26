@@ -4,7 +4,6 @@ $bp-desktop: 1280px;
 $bp-small-desktop: 1024px;
 $bp-tablet: 640px;
 $bp-mobile: 320px;
-
 $c-white: #fff;
 $c-white-trans: #ffffff90;
 $c-dark: #2c2c2c;
@@ -14,6 +13,8 @@ $c-gray: #6c788b;
 $c-dark-gray: #334563;
 $c-light-gray: #c0cdd7;
 $c-background: #eee;
-
-$font-heading: 'Poppins', Arial, sans-serif;
-$font-text: 'Open Sans', Helvetica, sans-serif;
+$font-heading: Poppins, Arial, sans-serif;
+$font-text:
+  Open Sans,
+  Helvetica,
+  sans-serif;

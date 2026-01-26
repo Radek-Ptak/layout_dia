@@ -1,11 +1,13 @@
 .burger {
-  background-image: url('../images/Menu.svg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
   display: block;
+
   width: 18px;
   height: 8px;
+
+  background-image: url('../images/Menu.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 
   &__label {
     @include visually-hidden;

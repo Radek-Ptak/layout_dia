@@ -1,66 +1,70 @@
 .header {
   position: relative;
-  margin-left: auto;
-  display: grid;
-  justify-content: center;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: auto auto auto;
-  gap: 48px;
-  grid-template-areas:
-    'nav nav'
-    'con con'
-    'gal gal';
 
-  min-height: 100vh;
+  overflow: hidden;
+  grid-template-rows: auto auto 1fr;
+
   min-width: $bp-mobile;
-  padding: 20px 20px 0 20px;
-  background: $c-dark;
+  min-height: 893px;
+  padding: 20px 20px 0;
   border-radius: 0 0 30px 30px;
 
+  background: $c-dark;
+
+  @include grid;
+
   @include tablet {
-    gap: 56px;
-    min-height: 893px;
-    padding: 20px 40px 0 40px;
+    padding: 20px 40px 0;
   }
 
   @include small-desktop {
-    grid-template-rows: auto auto;
-    grid-template-areas:
-      'nav nav'
-      'con .';
-    gap: 44px;
+    grid-template-rows: auto 1fr;
     min-height: 800px;
-    padding: 48px 54px 0 54px;
+    padding: 48px 54px 0;
+  }
+
+  @include desktop {
+    padding: 52px 227px 0;
+  }
+
+  @include large {
+    padding: 52px 707px 0;
   }
 
   &__navigation {
-    grid-area: nav;
+    grid-column: 1 / -1;
     align-self: start;
   }
 
   &__content {
-    grid-area: con;
-    align-self: start;
+    display: flex;
+    grid-column: 1 / -1;
+    flex-direction: column;
+    align-items: flex-start;
+
+    text-align: left;
 
     @include small-desktop {
+      grid-column: 1 / 6;
       align-self: end;
       margin-bottom: 205px;
     }
   }
 
   &__title {
-    font-family: $font-heading;
-    font-weight: 600;
-    font-size: 52px;
-    line-height: 1.2;
-    letter-spacing: -2px;
-    color: $c-white;
     margin-bottom: 32px;
 
+    font-family: $font-heading;
+    font-size: 52px;
+    font-weight: 600;
+    line-height: 1.2;
+    color: $c-white;
+    letter-spacing: -2px;
+
     @include tablet {
+      margin-bottom: 24px;
       font-size: 64px;
       line-height: 68px;
-      margin-bottom: 24px;
     }
 
     @include small-desktop {
@@ -69,39 +73,32 @@
   }
 
   &__text {
-    font-family: $font-text;
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 1.5;
-    color: $c-white;
     margin-bottom: 72px;
 
+    font-family: $font-text;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: $c-white;
+
     @include tablet {
+      max-width: 364px;
       margin-bottom: 56px;
     }
 
     @include small-desktop {
       margin-bottom: 83px;
-      max-width: 362px;
     }
   }
 
   &__gallery {
-    grid-area: gal;
-    align-self: end;
-    margin: 0 -20px 0 -20px;
-    width: calc(100% + 40px);
-
-    @include tablet {
-      margin: 0 -40px 0 -40px;
-      width: calc(100% + 80px);
-    }
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
 
     @include small-desktop {
-      position: absolute;
-      right: 0;
-      bottom: 0;
-      margin: 0;
+      left: auto;
       width: auto;
     }
   }

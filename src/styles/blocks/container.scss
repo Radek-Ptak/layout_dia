@@ -1,0 +1,18 @@
+.container {
+  justify-self: center;
+  min-width: 320px;
+  max-width: 1550px;
+  padding: 0 20px;
+
+  @include tablet {
+    padding: 0 40px 200px;
+  }
+
+  @include small-desktop {
+    padding: 0 54px 200px;
+  }
+
+  @include desktop {
+    padding: 0 0 200px;
+  }
+}
