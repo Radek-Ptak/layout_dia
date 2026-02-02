@@ -1,15 +1,8 @@
-.hire-us {
+.expertise {
   @include grid;
 
-  position: absolute;
-  right: 0;
-  bottom: auto;
-  left: 0;
-
   row-gap: 0;
-
   border-radius: 30px;
-
   background-color: $c-white;
 
   &__title {
@@ -48,7 +41,6 @@
 
     @include desktop {
       gap: 177px;
-      padding: 64px 0 134px;
     }
   }
 }

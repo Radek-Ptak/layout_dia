@@ -73,6 +73,8 @@
     background-position: center;
     background-size: 18px 18px;
 
+    @include hover(transform, scale(1.1));
+
     &--back {
       rotate: 180deg;
       background-image: url('../images/slider/arrow-left.svg');

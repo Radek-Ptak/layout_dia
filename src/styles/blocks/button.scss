@@ -17,6 +17,16 @@
 
   background-color: $c-blue;
 
+  @include hover(transform, scale(1.1));
+
+  transition:
+    transform 0.3s,
+    box-shadow 0.3s;
+
+  &:hover {
+    box-shadow: 1px 4px 16px 0 $c-blue;
+  }
+
   @include tablet {
     width: 264px;
     margin-bottom: 91px;
