@@ -35,4 +35,12 @@
   @include small-desktop {
     margin-bottom: 0;
   }
+
+  &--secondary {
+    margin-bottom: 72px;
+
+    @include tablet {
+      margin-bottom: 200px;
+    }
+  }
 }
