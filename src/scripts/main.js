@@ -8,10 +8,10 @@ const btnForward = document.querySelector('.card__button--forward');
 const contactForm = document.querySelector('.form');
 
 const slides = [
-  'src/images/slider/slide-img-1.jpg',
-  'src/images/slider/slide-img-2.jpg',
-  'src/images/slider/slide-img-3.jpg',
-  'src/images/slider/slide-img-4.jpg',
+  './src/images/slider/slide-img-1.jpg',
+  './src/images/slider/slide-img-2.jpg',
+  './src/images/slider/slide-img-3.jpg',
+  './src/images/slider/slide-img-4.jpg',
 ];
 
 let currentIndex = 0;
@@ -19,8 +19,13 @@ let currentIndex = 0;
 const updateSlide = (index) => {
   if (card) {
     card.style.backgroundImage = `url('${slides[index]}')`;
+    card.style.backgroundSize = 'cover';
+    card.style.backgroundPosition = 'center';
+    card.style.backgroundRepeat = 'no-repeat';
   }
 };
+
+updateSlide(currentIndex);
 
 if (btnForward && btnBack) {
   btnForward.addEventListener('click', (e) => {
