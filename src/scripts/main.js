@@ -1,18 +1,41 @@
 'use strict';
 
+const card = document.querySelector('.card');
+const btnBack = document.querySelector('.card__button--back');
+const btnForward = document.querySelector('.card__button--forward');
 const menu = document.querySelector('.menu');
 const burger = document.querySelector('.burger');
-const card = document.querySelector('.card');
 const contactForm = document.querySelector('.form');
 
-// Ustawiamy tylko jedną, konkretną ścieżkę
-const staticImage = './src/images/slider/slide-img-1.jpg';
+let currentIndex = 1;
+const totalSlides = 4;
 
-if (card) {
-  card.style.backgroundImage = `url('${staticImage}')`;
-  card.style.backgroundSize = 'cover';
-  card.style.backgroundPosition = 'center';
-  card.style.backgroundRepeat = 'no-repeat';
+const updateSlide = (index) => {
+  if (card) {
+    card.classList.remove(
+      'card--slide-1',
+      'card--slide-2',
+      'card--slide-3',
+      'card--slide-4',
+    );
+    card.classList.add(`card--slide-${index}`);
+  }
+};
+
+updateSlide(currentIndex);
+
+if (btnForward && btnBack) {
+  btnForward.addEventListener('click', (e) => {
+    e.preventDefault();
+    currentIndex = currentIndex < totalSlides ? currentIndex + 1 : 1;
+    updateSlide(currentIndex);
+  });
+
+  btnBack.addEventListener('click', (e) => {
+    e.preventDefault();
+    currentIndex = currentIndex > 1 ? currentIndex - 1 : totalSlides;
+    updateSlide(currentIndex);
+  });
 }
 
 if (burger && menu) {
@@ -33,13 +56,8 @@ document.addEventListener('click', (e) => {
 
     if (targetElement) {
       e.preventDefault();
-      targetElement.scrollIntoView({
-        behavior: 'smooth',
-      });
-
-      if (menu) {
-        menu.classList.remove('active');
-      }
+      targetElement.scrollIntoView({ behavior: 'smooth' });
+      if (menu) menu.classList.remove('active');
       return;
     }
   }
@@ -47,27 +65,18 @@ document.addEventListener('click', (e) => {
   if (menu && menu.classList.contains('active')) {
     const isInsideMenu = menu.contains(target);
     const isBurger = burger && burger.contains(target);
-
-    if (!isInsideMenu && !isBurger) {
-      menu.classList.remove('active');
-    }
+    if (!isInsideMenu && !isBurger) menu.classList.remove('active');
   }
 });
 
 if (contactForm) {
   contactForm.addEventListener('submit', (e) => {
     e.preventDefault();
-
     const nameInput = document.getElementById('name');
-    const name = nameInput ? nameInput.value : 'Guest';
-
-    alert(`Thank you, ${name}! Your message has been sent.`);
-
+    alert(
+      `Thank you, ${nameInput ? nameInput.value : 'Guest'}! Your message has been sent.`,
+    );
     contactForm.reset();
-
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth',
-    });
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 }
