@@ -5,6 +5,7 @@ const burger = document.querySelector('.burger');
 const card = document.querySelector('.card');
 const btnBack = document.querySelector('.card__button--back');
 const btnForward = document.querySelector('.card__button--forward');
+const contactForm = document.querySelector('.form');
 
 const slides = [
   'src/images/slider/slide-img-1.jpg',
@@ -35,11 +36,13 @@ if (btnForward && btnBack) {
   });
 }
 
-burger.addEventListener('click', (e) => {
-  e.preventDefault();
-  menu.classList.toggle('active');
-  e.stopPropagation();
-});
+if (burger && menu) {
+  burger.addEventListener('click', (e) => {
+    e.preventDefault();
+    menu.classList.toggle('active');
+    e.stopPropagation();
+  });
+}
 
 document.addEventListener('click', (e) => {
   const target = e.target;
@@ -51,19 +54,38 @@ document.addEventListener('click', (e) => {
 
     if (targetElement) {
       e.preventDefault();
-
-      window.history.replaceState(null, null, targetId);
-      targetElement.scrollIntoView({ behavior: 'smooth' });
+      targetElement.scrollIntoView({
+        behavior: 'smooth',
+      });
 
       menu.classList.remove('active');
       return;
     }
   }
 
-  const isInsideMenu = menu.contains(target);
-  const isBurger = burger.contains(target);
+  if (menu && menu.classList.contains('active')) {
+    const isInsideMenu = menu.contains(target);
+    const isBurger = burger && burger.contains(target);
 
-  if (menu.classList.contains('active') && !isInsideMenu && !isBurger) {
-    menu.classList.remove('active');
+    if (!isInsideMenu && !isBurger) {
+      menu.classList.remove('active');
+    }
   }
 });
+
+if (contactForm) {
+  contactForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const formData = {
+      name: document.getElementById('name').value,
+      email: document.getElementById('email').value,
+      message: document.getElementById('message').value,
+    };
+
+    console.log('Formularz wysłany:', formData);
+
+    alert(`Thank you, ${formData.name}! Your message has been sent.`);
+    contactForm.reset();
+  });
+}
