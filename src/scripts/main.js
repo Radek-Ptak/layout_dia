@@ -1,10 +1,10 @@
 'use strict';
 
 const slides = [
-  './images/slider/slide-img-1.jpg',
-  './images/slider/slide-img-2.jpg',
-  './images/slider/slide-img-3.jpg',
-  './images/slider/slide-img-4.jpg',
+  'https://radek-ptak.github.io/layout_dia/src/images/slider/slide-img-1.jpg',
+  'https://radek-ptak.github.io/layout_dia/src/images/slider/slide-img-2.jpg',
+  'https://radek-ptak.github.io/layout_dia/src/images/slider/slide-img-3.jpg',
+  'https://radek-ptak.github.io/layout_dia/src/images/slider/slide-img-4.jpg',
 ];
 
 const menu = document.querySelector('.menu');
@@ -52,28 +52,14 @@ if (burger && menu) {
 document.addEventListener('click', (e) => {
   const target = e.target;
   const link = target.closest('a[href^="#"]');
-
   if (link) {
     const targetId = link.getAttribute('href');
     const targetElement = document.querySelector(targetId);
-
     if (targetElement) {
       e.preventDefault();
       targetElement.scrollIntoView({ behavior: 'smooth' });
-
-      if (menu) {
-        menu.classList.remove('active');
-      }
+      if (menu) menu.classList.remove('active');
       return;
-    }
-  }
-
-  if (menu && menu.classList.contains('active')) {
-    const isInsideMenu = menu.contains(target);
-    const isBurger = burger && burger.contains(target);
-
-    if (!isInsideMenu && !isBurger) {
-      menu.classList.remove('active');
     }
   }
 });
@@ -82,11 +68,10 @@ if (contactForm) {
   contactForm.addEventListener('submit', (e) => {
     e.preventDefault();
     const nameInput = document.getElementById('name');
-    const name = nameInput ? nameInput.value : 'Guest';
-
-    alert(`Thank you, ${name}! Your message has been sent.`);
+    alert(
+      `Thank you, ${nameInput ? nameInput.value : 'Guest'}! Your message has been sent.`,
+    );
     contactForm.reset();
-
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 }
