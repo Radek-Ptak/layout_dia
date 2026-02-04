@@ -8,10 +8,10 @@ const btnForward = document.querySelector('.card__button--forward');
 const contactForm = document.querySelector('.form');
 
 const slides = [
-  'src/images/slider/slide-img-1.jpg',
-  'src/images/slider/slide-img-2.jpg',
-  'src/images/slider/slide-img-3.jpg',
-  'src/images/slider/slide-img-4.jpg',
+  'https://radek-ptak.github.io/layout_dia/src/images/slider/slide-img-1.jpg',
+  'https://radek-ptak.github.io/layout_dia/src/images/slider/slide-img-2.jpg',
+  'https://radek-ptak.github.io/layout_dia/src/images/slider/slide-img-3.jpg',
+  'https://radek-ptak.github.io/layout_dia/src/images/slider/slide-img-4.jpg',
 ];
 
 let currentIndex = 0;
