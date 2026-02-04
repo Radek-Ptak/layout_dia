@@ -1,44 +1,18 @@
 'use strict';
 
-const slides = [
-  './src/images/slider/slide-img-1.jpg',
-  './src/images/slider/slide-img-2.jpg',
-  './src/images/slider/slide-img-3.jpg',
-  './src/images/slider/slide-img-4.jpg',
-];
-
 const menu = document.querySelector('.menu');
 const burger = document.querySelector('.burger');
 const card = document.querySelector('.card');
-const btnBack = document.querySelector('.card__button--back');
-const btnForward = document.querySelector('.card__button--forward');
 const contactForm = document.querySelector('.form');
 
-let currentIndex = 0;
+// Ustawiamy tylko jedną, konkretną ścieżkę
+const staticImage = './src/images/slider/slide-img-1.jpg';
 
-const updateSlide = (index) => {
-  if (card) {
-    card.style.backgroundImage = `url('${slides[index]}')`;
-    card.style.backgroundSize = 'cover';
-    card.style.backgroundPosition = 'center';
-    card.style.backgroundRepeat = 'no-repeat';
-  }
-};
-
-updateSlide(currentIndex);
-
-if (btnForward && btnBack) {
-  btnForward.addEventListener('click', (e) => {
-    e.preventDefault();
-    currentIndex = (currentIndex + 1) % slides.length;
-    updateSlide(currentIndex);
-  });
-
-  btnBack.addEventListener('click', (e) => {
-    e.preventDefault();
-    currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-    updateSlide(currentIndex);
-  });
+if (card) {
+  card.style.backgroundImage = `url('${staticImage}')`;
+  card.style.backgroundSize = 'cover';
+  card.style.backgroundPosition = 'center';
+  card.style.backgroundRepeat = 'no-repeat';
 }
 
 if (burger && menu) {
