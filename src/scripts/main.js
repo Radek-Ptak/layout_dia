@@ -58,7 +58,9 @@ document.addEventListener('click', (e) => {
         behavior: 'smooth',
       });
 
-      menu.classList.remove('active');
+      if (menu) {
+        menu.classList.remove('active');
+      }
       return;
     }
   }
@@ -83,9 +85,13 @@ if (contactForm) {
       message: document.getElementById('message').value,
     };
 
-    console.log('Formularz wysłany:', formData);
-
     alert(`Thank you, ${formData.name}! Your message has been sent.`);
+
     contactForm.reset();
+
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
   });
 }
