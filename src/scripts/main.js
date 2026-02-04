@@ -1,9 +1,11 @@
 'use strict';
 
-import slide1 from '../images/slider/slide-img-1.jpg';
-import slide2 from '../images/slider/slide-img-2.jpg';
-import slide3 from '../images/slider/slide-img-3.jpg';
-import slide4 from '../images/slider/slide-img-4.jpg';
+const slides = [
+  './images/slider/slide-img-1.jpg',
+  './images/slider/slide-img-2.jpg',
+  './images/slider/slide-img-3.jpg',
+  './images/slider/slide-img-4.jpg',
+];
 
 const menu = document.querySelector('.menu');
 const burger = document.querySelector('.burger');
@@ -11,8 +13,6 @@ const card = document.querySelector('.card');
 const btnBack = document.querySelector('.card__button--back');
 const btnForward = document.querySelector('.card__button--forward');
 const contactForm = document.querySelector('.form');
-
-const slides = [slide1, slide2, slide3, slide4];
 
 let currentIndex = 0;
 
