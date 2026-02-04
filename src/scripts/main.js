@@ -1,10 +1,9 @@
 'use strict';
 
-// Importujemy obrazy bezpośrednio - to klucz do sukcesu w Vite
-import slide1 from './images/slider/slide-img-1.jpg';
-import slide2 from './images/slider/slide-img-2.jpg';
-import slide3 from './images/slider/slide-img-3.jpg';
-import slide4 from './images/slider/slide-img-4.jpg';
+import slide1 from '../images/slider/slide-img-1.jpg';
+import slide2 from '../images/slider/slide-img-2.jpg';
+import slide3 from '../images/slider/slide-img-3.jpg';
+import slide4 from '../images/slider/slide-img-4.jpg';
 
 const menu = document.querySelector('.menu');
 const burger = document.querySelector('.burger');
@@ -13,7 +12,6 @@ const btnBack = document.querySelector('.card__button--back');
 const btnForward = document.querySelector('.card__button--forward');
 const contactForm = document.querySelector('.form');
 
-// Vite zamieni te zmienne na poprawne ścieżki w folderze 'dist'
 const slides = [slide1, slide2, slide3, slide4];
 
 let currentIndex = 0;
@@ -27,7 +25,6 @@ const updateSlide = (index) => {
   }
 };
 
-// Startujemy slider
 updateSlide(currentIndex);
 
 if (btnForward && btnBack) {
@@ -84,9 +81,12 @@ document.addEventListener('click', (e) => {
 if (contactForm) {
   contactForm.addEventListener('submit', (e) => {
     e.preventDefault();
-    const name = document.getElementById('name').value;
+    const nameInput = document.getElementById('name');
+    const name = nameInput ? nameInput.value : 'Guest';
+
     alert(`Thank you, ${name}! Your message has been sent.`);
     contactForm.reset();
+
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 }
