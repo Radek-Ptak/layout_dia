@@ -1,11 +1,13 @@
 .logo {
   @include small-desktop {
     display: flex;
-    align-items: baseline;
+    flex: 1;
+    justify-content: flex-start;
   }
 
   &__image {
-    width: 28px;
-    height: 46px;
+    display: block;
+    width: 46px;
+    height: 28px;
   }
 }

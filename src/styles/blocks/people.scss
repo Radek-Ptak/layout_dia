@@ -11,7 +11,16 @@
     text-align: center;
 
     background-color: $c-white;
-    box-shadow: 0 4px 20px $c-blue;
+
+    transition:
+      transform 0.3s,
+      box-shadow 0.3s ease;
+
+    @include hover(transform, translateY(-6px));
+
+    &:hover {
+      box-shadow: 0 4px 20px $c-blue;
+    }
 
     @include tablet {
       min-height: 478px;

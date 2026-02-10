@@ -6,6 +6,11 @@
 
   @include tablet {
     gap: 80px;
+    width: 362px;
+  }
+
+  @include desktop {
+    width: 100%;
   }
 
   &__fields {
