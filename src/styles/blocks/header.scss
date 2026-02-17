@@ -4,7 +4,6 @@
   overflow: hidden;
   grid-template-rows: auto auto 1fr;
 
-  min-width: $bp-mobile;
   min-height: 893px;
   padding: 20px 20px 0;
   border-radius: 0 0 30px 30px;
@@ -96,6 +95,10 @@
     right: 0;
     bottom: 0;
     left: 0;
+
+    overflow: hidden;
+
+    max-width: 100%;
 
     @include small-desktop {
       left: auto;
