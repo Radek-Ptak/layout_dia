@@ -38,7 +38,6 @@
   &__visual {
     position: relative;
 
-    overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -91,7 +90,7 @@
     }
 
     &--left {
-      bottom: 47%;
+      bottom: 40%;
       left: 30px;
       transform: rotate(30deg);
 
@@ -101,7 +100,7 @@
     }
 
     &--right {
-      top: 47%;
+      top: 40%;
       right: 30px;
       transform: rotate(30deg);
 
